@@ -1,8 +1,4 @@
-# this is a test script created for testing in jenkins
 
-if [ $SHELL == /bin/sh ]
-
-then
 
 echo "shell value imported"
 
@@ -12,11 +8,5 @@ chmod 777 experian
 
 echo "welcome to cis experian.please enter your name" > experian
 
+cat experian
 
-
-else
-
-echo "shell variable not imported"
-exit 1
-
-fi
