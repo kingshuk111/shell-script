@@ -1,6 +1,6 @@
 # this is a test script created for testing in jenkins
 
-if [ "$SHELL" == "/bin/sh" ]
+if [ $SHELL -eq /bin/sh ]
 
 then
 
