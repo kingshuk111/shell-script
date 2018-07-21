@@ -1,16 +1,17 @@
+
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
-Description: A starter AWS Lambda function.
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the time
 Resources:
-  helloworldpython:
-    Type: 'AWS::Serverless::Function'
+  TimeFunction:
+    Type: AWS::Serverless::Function
     Properties:
-      Description: A starter AWS Lambda function.
-      Runtime: python2.7
-      Handler: hellopython.lambda_handler
+      Handler: index.handler
+      Runtime: nodejs6.10
       CodeUri: ./
-      Policies:
-        - "AWSConfigRulesExecutionRole"
-        - "AWSLambdaDynamoDBExecutionRole"
-      MemorySize: 128
-Timeout: 3
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /TimeResource
+            Method: GET
